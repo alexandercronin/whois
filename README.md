@@ -1,17 +1,16 @@
-Goal
-====
+This Project is in development and does not work!
 
--  Create a simple importable Python module which will produce parsed
+# Goal
+
+- Create a simple importable Python module which will produce parsed
    WHOIS data for a given domain.
--  Able to extract data for all the popular TLDs (com, org, net, ...)
--  Query a WHOIS server directly instead of going through an
+- Able to extract data for all the popular TLDs (com, org, net, ...)
+- Query a WHOIS server directly instead of going through an
    intermediate web service like many others do.
 
+# Example
 
-Example
-=======
-
-```python
+```python {"id":"01J4265RHTMKMNPQ29DKWXJ89S"}
 >>> import whois
 >>> w = whois.whois('example.com')
 >>> w.expiration_date  # dates converted to datetime object
@@ -34,39 +33,37 @@ Registry Domain ID: 2336799_DOMAIN_COM-VRSN
   ...
 ```
 
-Install
-=======
+# Install
 
 Install from pypi:
 
-```bash
+```bash {"id":"01J4265RHTMKMNPQ29DKY6HJK2"}
 pip install python-whois
 ```
 
 Or checkout latest version from repository:
 
-```bash
+```bash {"id":"01J4265RHTMKMNPQ29DMZHCQ7N"}
 git clone git@github.com:richardpenman/whois.git
 pip install -r requirements.txt
 ```
 
 Run test cases:
 
-```bash
+```bash {"id":"01J4265RHTMKMNPQ29DPY59XT9"}
 python -m pytest
 ```
 
-Problems?
-=========
+# Problems?
 
-Pull requests are welcome! 
+Pull requests are welcome!
 
-Thanks to the many who have sent patches for additional TLDs. If you want to add or fix a TLD it's quite straightforward. 
+Thanks to the many who have sent patches for additional TLDs. If you want to add or fix a TLD it's quite straightforward.
 See example domains in [whois/parser.py](https://github.com/richardpenman/whois/blob/master/whois/parser.py)
 
 Basically each TLD has a similar format to the following:
 
-```python
+```python {"id":"01J4265RHTMKMNPQ29DS5AZHKB"}
 class WhoisOrg(WhoisEntry):
   """Whois parser for .org domains
   """
