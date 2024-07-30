@@ -87,9 +87,13 @@ def extract_domain(url):
     global suffixes
     if not suffixes:
         # downloaded from https://publicsuffix.org/list/public_suffix_list.dat
-        tlds_path = os.path.join(
-            os.getcwd(), os.path.dirname(__file__), "data", "public_suffix_list.dat"
-        )
+        if hasattr(sys, '_MEIPASS'):
+            # Running in a PyInstaller bundle
+            tlds_path = os.path.join(sys._MEIPASS, "data", "public_suffix_list.dat")
+        else:
+            tlds_path = os.path.join(
+                os.getcwd(), os.path.dirname(__file__), "data", "public_suffix_list.dat"
+            )
         with open(tlds_path, encoding="utf-8") as tlds_fp:
             suffixes = set(
                 line.encode("utf-8")

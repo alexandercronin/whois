@@ -1,1 +1,4 @@
 *.pyc
+python_whois.egg-info
+build
+dist
